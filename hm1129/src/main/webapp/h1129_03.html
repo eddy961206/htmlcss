@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			table,td{border: 1px solid black; border-collapse: collapse;}
+			td{width: 100px; height:40px; text-align: center;}
+			hr{height: 10px; color: red;}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td rowspan="2">1행1열</td> <!-- rowspan : 가로줄끼리(위아래로) 합치기 / 다음 tr의 td를 지움-->
+				<td colspan="2">1행2열</td>
+				<td>1행4열</td>
+			</tr>		
+			<tr>
+				<td colspan="3">2행2열</td> <!-- colspan : 세로줄끼리(옆으로) 합치기 / td를 그만큼 지움-->
+			</tr>		
+			<tr>
+				<td>3행1열</td>
+				<td>3행2열</td>
+				<td>3행3열</td>
+				<td>3행4열</td>
+			</tr>		
+		</table>
+		
+		<hr>
+		
+		<table>
+			<tr>
+				<td colspan="3">1행1열</td>
+			</tr>		
+			<tr>
+				<td>2행1열</td>
+				<td rowspan="2">2행2열</td>
+				<td rowspan="3">2행3열</td>
+			</tr>		
+			<tr>
+				<td>3행1열</td>
+			</tr>		
+			<tr>
+				<td>4행1열</td>
+				<td>4행2열</td>
+			</tr>		
+		</table>
+	</body>
+</html>

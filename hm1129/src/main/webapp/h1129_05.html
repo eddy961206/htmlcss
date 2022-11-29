@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			*{margin: 0px; padding: 0px;}
+			div{width:920px; margin: 50px auto;} /* auto: 50% */
+			h2{color: #333; font-weight:bold; font-size:20px} /* 색깔 6자린데 숫자가 2번씩 반복되면 생략가능 */
+			table, td{border-collapse:collapse;}
+			table{width:100%; margin-top:15px; border-top:2px solid #7b8290;
+			border-left:0px; border-right: 0px; border-bottom:0px;}
+			th{background:#f5f5f5; height: 48px;
+			color:#454545; font-size:14px; font-weight:bold; 
+			text-align: center; border-bottom: 1px solid #d4d7db;}
+			#th01{border-right: 1px solid #eaebed;}
+			td{text-align: center;
+			   height:48px; color:#454545; font-size:14px; text-align: center;
+			   border-bottom: 1px solid #d4d7db;
+			   border-right: 1px solid #eaebed;
+			}
+			.c_border{border-right: 0px;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h2>객실 정원 안내 Max,Pax</h2> 
+			<table>
+			<colgroup>
+				<col width="18%">
+				<col width="28%">
+				<col width="54%">
+			</colgroup>
+				<tr>
+					<th id="th01" colspan="2">구분</th>
+					<th>정원</th>
+				</tr>
+				<tr>
+					<td rowspan="9">리조트</td>
+					<td>패밀리</td>
+					<td class="c_border">4인</td>
+				</tr>
+				<tr>
+					<td>스위트</td>
+					<td class="c_border">5인</td>
+				</tr>
+				<tr>
+					<td>골드스위트</td>
+					<td class="c_border">7인</td>
+				</tr>
+				<tr>
+					<td>패밀리(온돌)</td>
+					<td class="c_border">4인</td>
+				</tr>
+				<tr>
+					<td>스위트(온돌)</td>
+					<td class="c_border">5인</td>
+				</tr>
+				<tr>
+					<td>패밀리</td>
+					<td class="c_border">4인</td>
+				</tr>
+				<tr>
+					<td>스위트</td>
+					<td class="c_border">5인</td>
+				</tr>
+				<tr>
+					<td>스위트(취사형)</td>
+					<td class="c_border">5인</td>
+				</tr>
+				<tr>
+					<td>스위트(클린형)</td>
+					<td class="c_border">5인</td>
+				</tr>
+				<tr>
+					<td rowspan="3">호텔</td>
+					<td>슈페리어</td>
+					<td class="c_border" rowspan="3">2인</td>
+				</tr>
+				<tr>
+					<td>디럭스</td>
+				</tr>
+				<tr>
+					<td>디럭스VIEW</td>
+				</tr>
+				<tr>
+					<td rowspan="3">노블리안동</td>
+					<td>실버스위트</td>
+					<td class="c_border">6인</td>
+				</tr>
+				<tr>
+					<td>골드스위트</td>
+					<td class="c_border">7인</td>
+				</tr>
+				<tr>
+					<td>로얄스위트</td>
+					<td class="c_border">8인</td>
+				</tr>
+			</table>
+		</div>
+		
+		<hr><br>
+		
+		<table>
+			<tr>
+				<td rowspan="2" colspan="2">구분</td>
+				<td colspan="2">정원 추가요금(1인 1박당)</td>
+				<td rowspan="2">추가인원</td>
+			</tr>
+			<tr>
+				<td>자진신고</td>
+				<td>미신고 적발시</td>
+			</tr>
+			<tr>
+				<td rowspan="9">리조트</td>
+				<td>패밀리</td>
+				<td rowspan="3">5,500원	</td>
+				<td rowspan="3">11,000원</td>
+				<td>3행5열</td>
+			</tr>
+			<tr>
+				<td>스위트</td>
+				<td>4행5열</td>
+			</tr>
+			<tr>
+				<td>골드스위트</td>
+				<td>5행5열</td>
+			</tr>
+			<tr>
+				<td>패밀리(온돌)</td>
+				<td>6행3열</td>
+				<td>6행4열</td>
+				<td>6행5열</td>
+			</tr>
+			<tr>
+				<td>스위트(온돌)</td>
+				<td>7행3열</td>
+				<td>7행4열</td>
+				<td>7행5열</td>
+			</tr>
+			<tr>
+				<td>패밀리</td>
+				<td>8행3열</td>
+				<td>8행4열</td>
+				<td>8행5열</td>
+			</tr>
+			<tr>
+				<td>스위트</td>
+				<td>9행3열</td>
+				<td>9행4열</td>
+				<td>9행5열</td>
+			</tr>
+			<tr>
+				<td>스위트(취사형)</td>
+				<td>10행3열</td>
+				<td>10행4열</td>
+				<td>10행5열</td>
+			</tr>
+			<tr>
+				<td>스위트(클린형)</td>
+				<td>11행3열</td>
+				<td>11행4열</td>
+				<td>11행5열</td>
+			</tr>
+			<tr>
+				<td rowspan="3">호텔</td>
+				<td>12행2열</td>
+				<td>12행3열</td>
+				<td>12행4열</td>
+				<td>12행5열</td>
+			</tr>
+			<tr>
+				<td>13행2열</td>
+				<td>13행3열</td>
+				<td>13행4열</td>
+				<td>13행5열</td>
+			</tr>
+			<tr>
+				<td>14행2열</td>
+				<td>14행3열</td>
+				<td>14행4열</td>
+				<td>14행5열</td>
+			</tr>
+			<tr>
+				<td>15행1열</td>
+				<td>15행2열</td>
+				<td>15행3열</td>
+				<td>15행4열</td>
+				<td>15행5열</td>
+			</tr>
+			<tr>
+				<td>16행1열</td>
+				<td>16행2열</td>
+				<td>16행3열</td>
+				<td>16행4열</td>
+				<td>16행5열</td>
+			</tr>
+			<tr>
+				<td>17행1열</td>
+				<td>17행2열</td>
+				<td>17행3열</td>
+				<td>17행4열</td>
+				<td>17행5열</td>
+			</tr>
+		</table>
+		
+		
+	</body>
+</html>
