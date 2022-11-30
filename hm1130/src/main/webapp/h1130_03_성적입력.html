@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>form</title>
+		<style>
+			li {list-style:none; height: 40px;} /* ul-li사용해야 input박스 간에 간격 주기가 수월. */
+			label {width: 100px; display: inline-block;} /* label은 인라인 요소라서 width,height를 줘도 안먹어.(span도 마찬가지). 
+														그걸 inline-block으로 바꾸면 먹음. */
+			
+		</style>
+	</head>
+	<body>
+		<h2>학생성적 입력</h2>
+		<form action="result.html" method="get" name="frm">  <!-- get방식이 디폴트. -->
+			<input type="hidden" name="userIP" value="192.168.0.139"> 
+			<!-- hidden쓰면 input으로 따로 입력받지 않아도 꼭 받아야 할 정보를 자동으로 받게 됨. 
+			url에 result.html?userIP=192.168.0.139&id=aaa&stuName=홍길동&kor=23 이렇게 뜸.-->
+			
+			<ul>
+				<li>
+					<label for="id">아이디</label>
+					<input type="text" id="id" name="id">
+				</li>
+				<li>
+					<label>학생이름</label>
+					<input type="text" id="stuName" name="stuName">
+				</li>
+				<li>
+					<label>국어점수</label>
+					<input type="text" id="kor" name="kor">
+				</li>
+				<li>
+					<input type="submit" value="학생성적 등록">
+				</li>
+			</ul>
+		</form>
+	</body>
+</html>

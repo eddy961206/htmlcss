@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>form</title>
+	</head>
+	<body>
+		<form action="result.html" method="post" name="frm">
+				<label for="stuName">이름</label> <!--  for해놓으면 "이름"이라는 글자를 클릭해도 input박스(id속성값과 같아야)가 활성화 됨. -->
+				<input type="text" id="stuName" name="stuName"><br> <!-- name 속성값은 변수명. 여기에 값이 담김 -->
+				<label>국어점수</label>
+				<input type="text" name="kor"><br>
+				<label>영어점수</label>
+				<input type="text" name="eng"><br>
+				<label for="male">남자</label>
+				<input type="radio" id="male" name="gender" value="male">
+				<label>여자</label>
+				<input type="radio" name="gender" value="female"><br>
+				<input type="submit" value="확인"> 
+		</form>
+	</body>
+</html>
