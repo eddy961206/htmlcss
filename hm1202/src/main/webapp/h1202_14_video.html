@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>동영상</title>
+		<style>
+		   * { margin:0; padding:0; list-style: none;}
+		   header{ width:100%; height:60px; background: #fff;
+		           position: absolute; z-index:10;
+		    }
+		    nav{width: 1400px; height:60px; margin:0 auto; 
+		    }
+		    nav div{height:60px; 
+		    box-sizing:border-box;
+		    float:left;
+		    }
+		    nav #d01{width:230px; 
+		    background: url('images/logo-kolon-industries-color.svg') 0 20px / 223px no-repeat;
+		    color: white;} 
+		    nav #d02{width:970px; }
+		    nav #d02 ul{ width:600px; height:60px; background: white;}
+		    nav #d02 ul li { position:relative; left:35px; float:left; margin-right:40px; 
+		    line-height:56px; color:#000;}
+		    nav #d03{width:200px;} 
+		   #video_area{ width:100%; height:800px; overflow: hidden;
+		                position: absolute; top:0; z-index:3;
+		    }
+		   video{width:100%; }
+		   #txt_area { position: absolute; left:200px; top:285px; z-index:5;}
+		   #txt_area h2{ font-size:56px; line-height: 1.32;
+		   color:#eee; }
+		   #txt_area h6{ 
+		   margin-top:50px;
+		   font-size:16px; line-height: 1.625;
+		   color:#eee;
+		   }
+		   #menu1 {background:url('images/btn-gnb-lang-menu.svg') 14px no-repeat;}
+		   #menu1 {background:url('images/btn-gnb-search-menu.svg') 14px no-repeat;}
+		   #menu1 {background:url('images/btn-gnb-contact.svg') 14px no-repeat;}
+		</style>
+	</head>
+	<body>
+	    <header>
+	      <nav>
+	        <div id="d01"></div>
+	        <div id="d02">
+	        	<ul>
+	        		<li>회사정보</li>
+	        		<li>제품정보</li>
+	        		<li>지속가능경영</li>
+	        		<li>투자정보</li>
+	        		<li>채용정보</li>
+	        	</ul>
+	        </div>
+	        <div id="d03">
+	        	<div id="menu1"></div>
+	        	<div id="menu2"></div>
+	        	<div id="menu3"></div>
+	        </div>
+	      </nav>
+	    </header>
+		<div id="video_area">
+			<video src="images/k01.mp4" autoplay muted loop></video>
+		</div>
+		<div id="txt_area">
+			<h2>Sustainable Technology Creator,<br>
+				Kolon Industries</h2>
+			<h6>지속가능한 미래를 위해 변화를 이끌어 갑니다.</h6>	
+		</div>
+	
+	</body>
+</html>

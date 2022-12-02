@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>display</title>
+		<style>
+			*{margin:0; padding:0;}
+			div{width:200px; height:150px; border:2px solid black;
+				display:inline-block; margin-right:10px;}  
+				/* 블록방식인 div를 inline으로 바꾸면 width 와 height가 없어짐. 
+				그래서 inline-block으로 해줘야. */
+			#d01{background: green;}
+			#d02{background: blue;}
+			#d02:hover {display:none;}
+			#d03{background: yellow;}
+		</style>
+	</head>
+	<body>
+		<div id="d01">green</div>  <!-- div는 블록방식이라 세로로 나열됨 -->
+		<div id="d02">blue</div>
+		<div id="d03">yellow</div>
+		
+	</body>
+</html>
