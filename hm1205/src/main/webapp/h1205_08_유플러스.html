@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>유플러스모바일</title>
+		<link rel="stylesheet" href="css/icofont.min.css">
+		<style>
+			*{margin:0; padding:0; list-style:none;
+			  font-family: 'Noto Sans KR', sans-serif;
+			}
+			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+			#nav{width:100%; height:80px; background:#fff;
+				border-bottom:1px solid #efefef;
+				position: relative; z-index:10;
+			}
+			header{width:1280px; height:80px; margin:0 auto;}
+			header div{float:left;}
+			#logo{width:174px; height:80px;
+				  background: url(images/header-logo.png) 0 12px no-repeat;
+			}
+			#menu{width: 954px; height:80px;}
+			#menu ul {width: 840px; margin:0 auto;}
+			#menu ul li{ float:left; width:120px; text-align:center;
+				color:#191919; font-size:18px; font-weight:600;
+				line-height:80px; letter-spacing: -0.4px; 
+			}
+			#topMenu{width:152px; height:80px;} 
+			#topMenu ul li {float:left; font-size:25px; line-height:80px;
+				width:50px; text-align:center;
+			}
+			#banner{ width:100%; height: 730px;
+				background: url('images/1201.jpg') no-repeat;
+				background-size: cover;
+				position: relative; left:0; top:-80; z-index: 1;
+				margin-bottom:100px;
+			}
+			.sec01{width:1280px; height: 237px; margin:0 auto;
+				background: #f6f6f6; padding: 25px 0 5 0; border-radius: 10px;
+				position: relative; 
+				margin-bottom:100px;
+			}
+			.sec01 div{width:426px; height:212px; 
+				border:1px solid black; box-sizing:border-box;
+				float:left; 
+			}
+			.sec01 div:nth-child(1) p:nth-child(1){
+			width: 426px; color:#191919; font-size:16px; font-weight:600;
+			letter-spacing: -0.3px; text-align: center;
+			padding-top: 70px;
+			}
+			
+			.sec01 div:nth-child(2) img{width:100%;}
+		</style>
+	</head>
+	<body>
+		<!-- header영역 -->
+		<div id="nav">
+			<header>
+				<div id="logo"></div>
+				<div id="menu">
+					<ul>
+						<li>USIM/eSIM</li>
+						<li>휴대폰</li>
+						<li>상품</li>
+						<li>이벤트/혜택</li>
+						<li>고객지원</li>
+						<li>내 정보</li>
+						<li>유모바일</li>
+					</ul>
+				</div>
+				<div id="topMenu">
+					<ul>
+						<li><i class="icofont-search-1"></i></li>
+						<li><i class="icofont-ui-user"></i></li>
+						<li><i class="icofont-navigation-menu"></i></li>
+					</ul>
+				</div>
+			</header>
+		</div>
+		
+		<!--banner 영역-->
+		<div id="banner"></div>
+		
+		<!-- content영역 -->
+		<section class="sec01">
+			<div>
+				<p>남은 시간</p>
+				<p>D-03 07:26</p>
+			</div>
+			<div>
+				<img src="images/470_230.png">
+			</div>
+			<div>
+				<strong>12월의 모든 혜택을 한번에 확인!</strong>
+				<p>선택형 사은품과 300만원 래플까지!</p>
+			</div>
+		</section>		
+		
+	</body>
+</html>

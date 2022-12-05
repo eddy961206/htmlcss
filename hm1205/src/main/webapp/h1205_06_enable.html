@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>enabled</title>
+		<style>
+			input:disabled{ background:pink;}
+			input:checked+label>span{color:blue; font-weight:600;}
+		</style>
+	</head>
+	<body>
+		<form action="#" method="get">
+			<label>이름</label>
+			<input type="text" name="name2" id="name2" value="아무개" disabled><br> 
+			<!--disabled은 전송 안됨. 이게 readonly보다 보안상 나음 -->
+			<label>이달에 신청할 과목을 선택하세요.</label>
+			<br>
+			<input type="radio" name="subject" id="standard" value="standard">
+			<label for="standard"><span>기초</span></label>
+			
+			<label>
+				<input type="radio" name="subject" id="speaking" value="speaking">
+				<span>회화</span>
+			</label>
+			
+			<label>
+				<input type="radio" name="subject" id="grammer" value="grammer">
+				<span>문법</span>
+			</label>
+			
+			<label>
+				<input type="radio" name="subject" id="writing" value="writing">
+				<span>작문</span>
+			</label>
+			
+			<br>
+			<input type="submit" value="전송">
+			<input type="reset" value="취소"><br>
+		</form>
+	
+	</body>
+</html>

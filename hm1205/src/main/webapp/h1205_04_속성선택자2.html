@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>속성선택자2</title>
+		<link rel="stylesheet" href="css/icofont.min.css">
+		<style>
+			*{margin:0; padding:0; list-style: none;
+			  
+			}
+			a:visited, a:link {text-decoration:none;
+			  display: inline-block; width: 180px; height:40px;
+			} 
+			/* a:visited -> 링크 방문해도 글자 검정색으로 놔두게. 이걸 기본적으로 넣어 */
+			/* a:link {} -> 방문하지 않았을 때  */
+			ul li {width: 180px; height:40px; background:#efefef; margin-left:10px;
+			float:left; text-align: center;
+			}
+			[href *="net"]:focus {color: blue; font-weight: 900; background:red;} 
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li><a href="http://www.google.com">구글<i class="icofont-link"></i></a></li> <!--<li>안에<a>넣어 -->
+			<li>
+				<a href = "http://www.naver.com">네이버</a>
+			</li>
+			<li><a href="http://www.daum.net">다음</a></li>
+			<li><a href="http://www.youtube.com">유튜브</a></li>
+			
+		</ul>
+	</body>
+</html>
