@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>현대포인트 이미지</title>
+		<style>
+			*{margin:0; padding:0;}
+			section{width:1224px; height:481px;
+				margin: 100px auto;
+			}
+			div{
+				width:600px; height:400px; float:left;
+				border-radius: 20px;
+				transition-property: all;
+				transition-duration: 0.3s; 
+				box-sizing: border-box;
+				margin: 40px 5px;
+				box-shadow: 0 5px 10px 3px rgb(31 31 31 /20%);
+			}
+			section div:nth-child(1) {background: url(images/hpoint1.jpg)
+				no-repeat; background-size:cover; background-position:center;
+			}
+			section div:nth-child(2) {background: url(images/hpoint2.jpg)
+				no-repeat; background-size:cover; 
+			}
+			div:hover{
+				transform: translate(0,-10px); 
+				filter:brightness(80%);
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div></div>
+			<div></div>
+		</section>
+	</body>
+</html>
