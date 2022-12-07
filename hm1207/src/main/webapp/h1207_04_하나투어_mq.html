@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>media query</title>
+		<link rel="stylesheet" href="css/icofont.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+			*{margin:0; padding:0; list-style:none;}
+			header{width:100%; height: 57px; border-top :1px solid black; 
+				font-weight: 400;
+				font-family: 'Inter', 'AppleSDGothicNeo';
+				border-bottom: 1px solid black;	
+			}
+			header>div {width:70%; margin:0 auto;}
+			#menu ul li{float:left; margin-right:20px;
+				line-height:56px; font-size:15px; font-weight:600; color:#111;
+			}
+			#subLogo ul li{float:right; margin-right:4px;
+				font-size: 30px; margin-right:20px;
+			}
+			section{width:1200px; height:376px; margin:35px auto; }
+			section>p {font-size:26px; margin-bottom:18px;}
+			.four{float:left; width:282px; height:300px;}
+			#d01{background:url(images/1.jpg); width: 282px; height:210px; background-size: cover;}
+			#d02{background:url(images/2.png); width: 282px; height:210px; background-size: cover;}
+			#d03{background:url(images/3.png); width: 282px; height:210px; background-size: 80%;}
+			#d04{background:url(images/4.jpg); width: 282px; height:210px; background-size: cover;}
+			.image {width:282px; height:210px; background-size:cover;}
+			#first{width:100%; height:300px;}
+			.four{margin-right:15px;}
+			.text span:nth-child(1){font-size:17px; letter-spacing: -.4px; font-family: 'Inter';
+			font-weight:600; color:#111;}
+			.text span:nth-child(2){font-size:14px; font-family: 'Inter';
+			line-height:21px;}
+			strong{font-weight:600; font-size:22px; color:#111;}
+			
+			#second {position:relative; width:100%;}
+			#second strong {position:absolute;
+				top:58px; left:67px;
+				width:1200px; height:38px; 
+			    color:#fff; letter-spacing: -.4px;
+			    font-size: 30px;
+			    line-height: 38px;
+			    font-family: 'Black Han Sans', sans-serif;
+			    font-weight: 400;
+			}
+			#second>div{margin:60px auto 35px;}
+			#big{width:100%; height:749px;
+				background: url(images/big.jpg) no-repeat;
+				background-size:cover;
+			}
+			#europe {
+				width:100%; 
+				overflow:hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 헤더 -->
+		<header>
+			<div>
+				<div id="menu">
+					<ul>
+						<li>해외여행</li>
+						<li>제주/국내여행</li>
+						<li>항공</li>
+						<li>호텔</li>
+					</ul>
+				</div>
+				<div id="subLogo">
+					<ul>
+						<li><i class="icofont-heart"></i></li>
+						<li><i class="icofont-search-document"></i></li>
+						<li><i class="icofont-navigation-menu"></i></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+			
+		<div id="europe">
+			<img src="images/europe.jpg">
+		</div>		
+		
+		<!-- 첫번째 메인화면 -->
+		<section>
+			<p>갑자기 찾아온 겨울, 지금 인기 최고👍 여행지!</p>
+			<div id="first">
+				<div class="four">
+					<div id="d01"></div>
+					<div class="text">
+						<span>홋카이도 4일 #베스트셀러</span><br>
+						<span>#인기 온천호텔 #미식여행 #핵심관광</span><br>
+						<span><strong>1,388,700</strong>원~</span>
+					</div>
+				</div>
+				<div class="four">
+					<div id="d02"></div>
+					<div class="text">
+						<span>코타키나발루 5~6일 #샹그릴라라사리아 </span><br>
+						<span>#아일랜드투어 #반딧불이투어</span><br>
+						<span><strong>779,000</strong>원~</span>
+					</div>
+				</div>
+				<div class="four">
+					<div id="d03"></div>
+					<div class="text">
+						<span>하노이/하롱베이 5~6일 #가성비 </span><br>
+						<span>#실속있게 #핵심관광</span><br>
+						<span><strong>459,900</strong>원~</span>
+					</div>
+				</div>
+				<div class="four">
+					<div id="d04"></div>
+					<div class="text">
+						<span>이탈리아 일주 8,9일 #베스트셀러</span><br>
+						<span>#로마 벤츠 밴투어 #베네치아 대운하 투어</span><br>
+						<span><strong>2,690,000</strong>원~</span>
+					</div>
+				</div>
+			</div>			
+		</section>
+
+		<br>
+		<br>
+		<br>
+		
+		<!-- 두번째 메인화면 -->
+		<section id="second">
+			<div>
+				<strong>떠나자, 하나만 믿고! 🛫</strong>
+			</div>
+			<div id="big"></div>
+		</section>
+		
+	</body>
+</html>

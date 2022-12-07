@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>하나투어 media</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> <!--mediaQ-->
+		<link rel="stylesheet" href="css/icofont.min.css">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+			*{margin:0; padding:0; list-style:none; 
+			font-family: 'Noto Sans KR', sans-serif;}
+			header{width:100%; height:75px; margin-top: 65px;
+				box-sizing:border-box;
+				border-top:1px solid #ddd;
+				border-bottom:1px solid #111;
+			}
+			nav{width:1200px; height:75px; margin:0 auto;
+				border-left: 1px solid #ddd; border-right:1px solid #ddd;
+			} 
+			nav ul{margin-left:26px; font-size:15px; color:#111; line-height:70px;}
+			nav ul:nth-child(1) li{width:130px; height:75px; float:left;}
+			nav ul:nth-child(2) li{width:50px; height:75px; float:right;}
+			#banner{width:100%; height:750px;
+				background:url(images/europe.jpg) no-repeat;
+				background-size: cover;
+			}
+			section{width:100%; height:376px;}
+			section article{width:1200px; height:376px; margin:100px auto 0;}
+			article h4{font-size:26px; color:#000; font-weight:600;
+				margin: 80px 0 30px;
+			}
+			article ul li {float:left; width:300px; height:320px;
+			}
+			article ul li div:nth-child(1){width:282px; height:210px;
+				overflow:hidden;
+			}
+			article>ul>li>div>img {width:282px;}
+			footer{width:100%; height:749px;
+					background:url(images/big.jpg) no-repeat; 
+			}
+			footer div {width:1200px; margin: 100px auto;
+			padding-top:60px;
+				color:#fff; font-size: 30px; font-weight:400;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 상단 메뉴 -->
+		<header>
+			<nav>
+				<ul>
+					<li>해외여행</li>
+					<li>제주/국내여행</li>
+					<li>항공</li>
+					<li>호텔</li>
+				</ul>
+				<ul>
+					<li><i class="icofont-heart"></i></li>
+					<li><i class="icofont-page"></i></li>
+					<li><i class="icofont-user"></i></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<!-- 배너 이미지 -->
+		<div id="banner"></div>	
+		
+		<!-- 4개 컨텐츠-->
+		<section>
+			<article>
+				<h4>갑자기 찾아온 겨울, 지금 인기 최고👍 여행지!</h4>
+				<ul>
+					<li>
+						<div>
+							<img src="images/1.jpg">
+						</div>
+						<div>
+							<strong>홋카이도 4일 #베스트셀러 </strong>
+							<p>#인기 온천호텔 #미식여행 #핵심관광</p>
+							<div>1,388,700<span>원~</span></div>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="images/2.png">
+						</div>
+						<div>
+							<strong>코타키나발루 5~6일 #샹그릴라라사리아</strong>
+							<p>#아일랜드투어 #반딧불이투어</p>
+							<div>779,000<span>원~</span></div>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="images/3.jpg">
+						</div>
+						<div>
+							<strong>하노이/하롱베이 5~6일 #가성비</strong>
+							<p>#실속있게 #핵심관광</p>
+							<div>779,000<span>원~</span></div>
+						</div>
+					</li>
+					<li>
+						<div>
+							<img src="images/4.png">
+						</div>
+						<div>
+							<strong>홋카이도 4일 #베스트셀러 </strong>
+							<p>#인기 온천호텔 #미식여행 #핵심관광</p>
+							<div>1,388,700<span>원~</span></div>
+						</div>
+					</li>
+					
+				</ul>
+			</article>
+		</section>
+		
+		<!-- 하단 이미지 -->
+		<footer>
+			<div>떠나자, 하나만 믿고! 🛫</div>
+		</footer>
+	</body>
+</html>
