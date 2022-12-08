@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>자바스크립트 타입 - string,number,boolean</title>
+		<script>
+			function btn(){
+				
+				a = Number(prompt("숫자를 입력하세여"));
+				b = Number(prompt("숫자를 입력하세여"));
+				alert(a+b); // 숫자 입력받아도 string으로 받아져서 10 10 이 1010이 됨
+				alert(typeof(a));
+				alert(typeof(String(a))); // 문자열 변환 :String();
+			}
+		
+		
+			function btn3(){
+				var a = 10;
+				var b = "10";
+				if(a===b){  //a==b는 내용만, a===b는 타입까지도 같냐. 보통==사용
+					alert("같습니다");
+				} else {
+					alert("다름니다");
+				}
+			}
+		
+			function btn2(){
+				var a = 10;  //number  -- 정수,실수 
+				var b = "10"; //string  -- 문자, 문자열
+				var c = a + b;  //string
+				console.log(c); //1010
+				console.log(typeof(a+"")); // string
+				alert(parseInt(b)+a); //20 
+				
+				// !!!!!! 타입 바꾸기 : Number:정수,실수 parseInt:정수, parseFloat:실수
+				
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="btn()">버튼</button>
+	</body>
+</html>
