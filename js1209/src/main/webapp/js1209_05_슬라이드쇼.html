@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>if</title>
+		<style>
+			*{margin:0; padding:0;}
+			section{width:800px; height:600px; border:1px solid black; 
+				margin:50px auto;
+			}
+			#screen{width:800px; height:600px; margin:0 auto;
+				font-size:30px; font-weight:600; text-align:center;
+				line-height: 300px; 
+				background:url(images/ive1.jpg) no-repeat;
+				background-size:cover;
+				transition : all 1s;
+			}
+			#btn{width:220px; margin:0 auto; }
+			button{ display:inline-block;
+			width:100px; height:60px; text-align:center;}
+		</style>
+		<script>
+			var imgArr = ["ive1.jpg","ive2.jpg","ive3.jpg","ive4.jpg","ive5.jpg",
+				"ive6.jpg","ive7.jpg"];
+			var i = 0;
+			function btn(count){
+				var screen = document.querySelector("#screen");
+
+				if(count==1) {
+					i++;
+					if(i==imgArr.length) i=0;
+					screen.style.backgroundImage = "url(images/"+imgArr[i]+")";
+				} else {
+					i--;
+					if(i<0) i=imgArr.length-1;
+					screen.style.backgroundImage = "url(images/"+imgArr[i]+")";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<section>
+			<div id="screen"></div>
+		</section>
+		<div id="btn">
+			<button onclick="btn(0)">◀</button>
+			<button onclick="btn(1)">▶</button>
+		</div>
+	</body>
+</html>

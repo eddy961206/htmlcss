@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function btn(){
+				var num = prompt("숫자를 입력하세요.");
+				var result = "";
+				if(num%2==0) result="짝수입니다.";
+				else result="홀수입니다.";
+				
+				
+				document.querySelector("#oddOrEven").innerText = result;
+			}
+		</script>
+		<style>
+			div{width:200px; height:300px; background:yellow; font-size:34px; }
+		</style>
+	</head>
+	<body>
+		<div id="oddOrEven">홀수입니까</div>
+		<button onclick="btn()">숫자입력</button>
+	</body>
+</html>

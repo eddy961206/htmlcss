@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			section{width:800px; margin:50px auto;}
+			table, th,td{border: 1px solid black; border-collapse: collapse;}
+			th,td{width:100px; height:40px;
+				font-size: 20px; text-align:center; vertical-align: middle;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<section>
+			<table id="tbox">
+			</table>
+		</section>
+	</body> 
+	<script>
+			var htmlData = "<table>";
+			for(var i = 2; i < 10; i++){
+					htmlData += "<tr><th colspan='5' class='head'>[ "+ i + "단 ]</th></tr>";
+				for(var j = 1; j <10; j++){
+					htmlData += "<tr><td>" + i + "</td><td>*</td><td>" + j + "</td><td>=</td><td>" + i*j +"</td></tr>";
+				}
+			}
+			htmlData += "</table>";
+			document.querySelector("#table").innerHTML = htmlData;
+			var head = document.querySelectorAll(".head");
+			for(var i = 0; i<head.length; i++){
+				head[i].style.backgroundColor = "green";
+			}
+	</script>
+</html>
