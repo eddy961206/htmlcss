@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>입력한 숫자까지 더하기 프로그램</title>
+		<style>
+			*{margin:0; padding:0;}
+			section{width:60%; margin:50px auto;}
+			h2{width:100%; text-align:center; margin-bottom:40px;}
+			div{width:100%; height:60px; border:1px solid black; font-size:50px;}
+		</style>
+		<script>
+			function btn(){
+				var input = Number(prompt("첫번째 숫자를 입력하세요."));
+				console.log(typeof(input)); // 받은건 string.
+				var input2 = Number(prompt("두번째 숫자를 입력하세요."));
+				var sum = 0;
+				for(var i = input; i <= input2; i++){ // 10 == "10" 참. 값이 같으니까 비교는 가능. 숫자로 형변환 안해도 가능. 사칙연산은 안돼 
+					sum += i;
+				}
+				document.querySelector("div").innerText = sum;
+			}
+		</script>
+	</head>
+	<body>
+		<section>
+			<h2>결과값</h2>
+			<div></div>
+			<br>
+			<button onclick="btn()" type="button">계산</button>
+		</section>
+	</body>
+</html>

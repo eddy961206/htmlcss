@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>화살표함수2</title>
+		<style>
+			*{margin:0; padding:0;}
+			section{width:60%; margin:50px auto;}
+			h2{width:100%; text-align:center; margin-bottom:40px;}
+			div{width:100%; height:60px; border:1px solid black; font-size:50px;}
+			button{width:200px; height:80px;}
+		</style>
+		
+	</head>
+	<body>
+		<section>
+			<h2>결과값</h2>
+			<div></div>
+			<button type="button" onclick="result_sum()"></button>
+			<br>
+		</section>
+		<script>
+		// 두 수를 입력받아 4 20 4부터 20까지 합을 구해서 화삺표함수를 사용해서 구현해보세요.
+			var sum = 0;
+			var num1 = Number(prompt("첫번째 숫자 넣으세요 : "));
+			var num2 = Number(prompt("두번째 숫자 넣으세요 : "));
+			
+			/* 기본함수 */
+// 			function result_sum(m,n){
+// 				for(var i = m; i <= n; i++){
+// 					sum += i;
+// 					console.log(sum);
+// 				}
+// 				console.log("기본함수 합계 : "+ sum);
+// 				return sum;
+// 			}
+// 			document.querySelector("div").innerText = result_sum(num1,num2);
+			
+
+			/* 익명함수1 */
+// 			var result = function(o,p){
+// 				for(var i = o; i <= p; i++){
+// 					sum += i;
+// 				}
+// 				console.log("익명함수1 합계 : "+ sum);
+// 				return sum;
+// 			}
+// 			document.querySelector("div").innerText = result(num1,num2);
+			
+			/* 익명 화살표함수 */
+// 			var sum_result = (a,b) => {
+// 				for(var i = a; i <= b; i++){
+// 					sum += i;
+// 				}
+// 				console.log("화살표함수 합계 : "+ sum);
+// 				return sum;
+// 			}
+// 			document.querySelector("div").innerText = sum_result(num1,num2);
+
+// 			(()=>{
+// 				var a = Number(prompt("첫번째 숫자 넣으세요 : "));
+// 				var b = Number(prompt("두번째 숫자 넣으세요 : "));
+// 				var sum = 0;
+// 				for(var i = a; i<=b; i++){
+// 					sum += i;
+// 				}
+// 				document.querySelector("div").innerText = sum;
+// 			})();
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

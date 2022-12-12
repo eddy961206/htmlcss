@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<form action="" method="get">
+			<h4>년도</h4>
+			<select name="year" id="year" onchange="btn()">
+			</select>
+			<span>년</span>
+			<h4>주식성장</h4>
+			<select name="stock" id="stock">
+				<option value="500">500</option>
+				<option value="502">502</option>
+				<option value="504">504</option>
+				<option value="506">506</option>
+			</select>
+			<span>년</span>
+		</form>
+		<script>
+			// 페이지 로딩 되자마자 진행
+			var htmlData = "";
+			for(var i = 1900; i <= 2022; i++){
+				htmlData += "<option value='"+ i + "'>" + i + "</option>";
+			}
+			// innerText: 글 저장 
+			document.querySelector("#year").innerHTML = htmlData;
+			
+			//onchange시 실행
+			function btn(){
+			    var selectData = "";
+				//1900 ~ 2000 : 500~1000, 2001~2022 : 1001~2000
+			    var selectedYear = document.querySelector("#year").value;
+				if(selectedYear <= 2000){
+					for (var j = 500; j <= 1000; j++){
+						selectData += "<option value='"+ j + "'>" + j + "</option>";
+					}
+				} else {
+					for (var j = 1001; j <= 2000; j++){
+						selectData += "<option value='"+ j + "'>" + j + "</option>";
+					}
+				}
+				document.querySelector("#stock").innerHTML = selectData;
+			}
+			
+		</script>
+	</body>
+</html>

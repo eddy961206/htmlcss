@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>익명함수</title>
+		<script>
+			(function(){
+				console.log("익명함수를 자동실행해줌");
+			}());
+			
+			(function(a,b){
+				console.log(a+b);
+			}(100,200));
+			
+			var result = function(){
+				return 100;
+			}
+			
+			document.write(result()); /* result가 익명함수의 이름이 되기때문에 ()를 붙여야 */
+			
+// 			$(document).ready(function(){})			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
