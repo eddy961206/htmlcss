@@ -28,14 +28,26 @@
 				"1998년 FIFA 월드컵(프랑스어: Coupe du monde de football de 1998)은 남자부 축구 국가대항전의 세계 선수권 대회인 FIFA 월드컵의 16번째 대회이며",
 				"1978년 FIFA 월드컵(영어: 1978 FIFA World Cup, 스페인어: Copa Mundial de Fútbol de 1978)은 제11회 FIFA 월드컵으로 1978년 6월 1일부터 6월 25일까지 아르헨티나에서 열렸다. 개최국인 아르헨티나가 네덜란드를 연장전 끝에 3-1로 꺾고 우승했다."
 				];	
-			var li01 = document.querySelector("#li01");
-			li01.addEventListener("click",function(){
-				alert(li01.innerText);
-				if(li01.innerText == "대한민국"){
-					document.querySelector("#main").style.backgroundColor = "blue";
-					document.querySelector("#main").innerText = worldcup[0];
-				}
-			});/* 집에서 전체 다 해봐 */
+			var colors = ["red","blue","yellow"];
+			var countries = document.querySelectorAll("li");
+			for(i = 0; i < countries.length; i++){
+				console.log(i);
+				alert(countries[i].innerText);
+				countries[i].addEventListener("click",function(){
+					console.log(i);
+// 					if(countries[i].innerText == "대한민국"){
+// 						document.querySelector("#main").style.backgrouondColor = colors[i];
+// 						document.querySelector("#main").innerText = worldcup[i];
+// 					}
+				});
+			}
+			
+// 			li01.addEventListener("click",function(){
+// 				if(li01.innerText == "대한민국"){
+// 					document.querySelector("#main").style.backgroundColor = "blue";
+// 					document.querySelector("#main").innerText = worldcup[0];
+// 				}
+// 			});/* 집에서 전체 다 해봐 */
 		</script>
 	</body>
 </html>
