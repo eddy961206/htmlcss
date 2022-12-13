@@ -30,17 +30,21 @@
 				];	
 			var colors = ["red","blue","yellow"];
 			var countries = document.querySelectorAll("li");
-			for(i = 0; i < countries.length; i++){
-				console.log(i);
-				alert(countries[i].innerText);
-				countries[i].addEventListener("click",function(){
-					console.log(i);
-// 					if(countries[i].innerText == "대한민국"){
-// 						document.querySelector("#main").style.backgrouondColor = colors[i];
-// 						document.querySelector("#main").innerText = worldcup[i];
-// 					}
+			for(i = 0; i < countries.length-1; i++){
+				countries[i].addEventListener("click",function(i){
+					if(countries[i].innerText == "대한민국"){
+						document.querySelector("#main").style.backgrouondColor = "red";
+						document.querySelector("#main").innerText = worldcup[i];
+					} else if(countries[i].innerText == "프랑스") {
+						document.querySelector("#main").style.backgrouondColor = "blue";
+						document.querySelector("#main").innerText = worldcup[i];
+					} else {
+						document.querySelector("#main").style.backgrouondColor = "yellow";
+						document.querySelector("#main").innerText = worldcup[i];
+					}
 				});
 			}
+			
 			
 // 			li01.addEventListener("click",function(){
 // 				if(li01.innerText == "대한민국"){
