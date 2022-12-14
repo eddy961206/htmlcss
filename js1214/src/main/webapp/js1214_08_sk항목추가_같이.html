@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>sk</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+		  * { margin:0; padding:0; letter-spacing: -0.4px;  }
+		  section{ width:1280px; margin:30px auto 0; }
+		  .title{ color:#222222; font-size:28px; font-weight:bold; line-height: 44px;
+		          margin-bottom:30px; 
+		  }
+		  .title span{ display:inline-block; box-sizing:border-box; 
+		  width:100px; height:44px; text-align:center; 
+		  cursor:pointer; border:1px solid #555; font-size:20px; 
+		  border-radius: 5px; margin-left:10px;
+		  }
+		  
+		  .title span:hover{ background:#BF9969; color:#fff;  }
+		    
+		  .allArea{ text-align:center;  }
+		  .colitem1 { width:30%; height:440px; float:left; margin:0 10px 10px;
+		    border:1px solid #dedede; background: #fff; 
+		    box-sizing:border-box; padding:60px 30px 55px; vertical-align: middle;
+		   }
+		  .img-box{width:100%; height:143px;  }
+		  .img-box img { width:143px; vertical-align: middle; }
+		  .text-box { margin-top:35px; }
+		  .box_title{ font-size:24px; font-weight: 600; color:#16873e; }
+		  .box_desc{ margin-top:20px;
+		     font-size:18px; line-height: 1.7; font-weight: 500; color:#555;}
+		</style>
+	</head>
+	<body>
+		<section>
+		  <div class="title">2022년 목표 <span onclick="addBtn()">항목추가</span></div>
+		  <div class="allArea">
+		    <div class="colitem1">
+		       <div class="img-box">
+		        <img src="images/icon-1.png">
+		       </div>
+		       <div class="text-box">
+			       <div class="box_title">Green Anchoring</div>
+			       <div class="box_desc">
+			         배터리 및 LiBS 국내외<br>
+			         적기 투자, BMR 성과 창출
+			       </div>
+		       </div>
+		    </div>
+		  </div>
+		</section>
+		<script>
+// 			function jqueryBtn(){
+// 				var tagData = "";
+// 				tagData += "<div class='colitem1'>";
+// 				tagData += "<div class='img-box'>";
+// 				tagData += "<img src='images/icon-1.png'>";
+// 				tagData += "</div>";
+// 				tagData += "<div class='text-box'>";
+// 				tagData += "<div class='box_title'>Green Anchoring</div>";
+// 				tagData += "<div class='box_desc'>";
+// 				tagData += "배터리 및 LiBS 국내외<br>";
+// 				tagData += "적기 투자, BMR 성과 창출";
+// 				tagData += "</div>";
+// 				tagData += "</div>";
+// 				tagData += "</div>";
+// 				$(".allArea").append(tagData);
+// 			}
+		
+			
+			function addBtn(){
+				//
+				var divNode = document.createElement("div");
+				var classNode = document.createAttribute("class");
+				classNode.value = "colitem1";
+				divNode.setAttributeNode(classNode);
+				document.querySelector(".allArea").appendChild(divNode);
+				
+				var divNode2 = document.createElement("div");
+				var classNode2 = document.createAttribute("class");
+				classNode2.value = "img-box";
+				divNode2.setAttributeNode(classNode2);
+				document.querySelector(".colitem1:last-child").appendChild(divNode2);
+		
+				var imgNode = document.createElement("img");
+				var srcNode = document.createAttribute("src");
+				srcNode.value = "images/icon-1.png";
+				imgNode.setAttributeNode(srcNode);
+				document.querySelector(".img-box:last-child").appendChild(imgNode);
+				
+				
+				var divNode3 = document.createElement("div");
+				var classNode3 = document.createAttribute("class");
+				classNode3.value = "text-box";
+				divNode3.setAttributeNode(classNode3);
+				document.querySelector(".colitem1:last-child").appendChild(divNode3);
+				
+				
+				var divNode4 = document.createElement("div");
+				var classNode4 = document.createAttribute("class");
+				classNode4.value = "box_title";
+				divNode4.setAttributeNode(classNode4);
+				divNode4.innerText = "Green Anchoring";
+				document.querySelector(".colitem1:last-child .text-box:last-child").appendChild(divNode4);
+// 				document.querySelector()
+				
+				
+				var divNode5 = document.createElement("div");
+				var classNode5 = document.createAttribute("class");
+				classNode5.value = "box_desc";
+				divNode5.setAttributeNode(classNode5);
+				divNode5.innerHTML = "배터리 및 LiBS 국내외<br>적기 투자, BMR 성과 창출"
+				document.querySelector(".colitem1:last-child .text-box:last-child").appendChild(divNode5);
+				
+				
+				
+				
+				
+				
+			}
+		</script>
+	</body>
+</html>

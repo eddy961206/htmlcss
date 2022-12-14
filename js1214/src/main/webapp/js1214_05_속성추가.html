@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>노드요소 속성추가</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+			*{margin:0; padding:0;}
+			section{width:50%; margin:50px auto;}
+			button{margin-bottom:30px;}
+			img{width:100px;}
+			.style1{width:100px;}
+			.style2{width:200px;}
+		</style>
+	</head>
+	<body>
+		<section>
+			<button onclick="btn()">이미지 추가</button>
+			<br>
+			<div id="main">
+				<img src="images/ha01.png" alt="하현성1">
+				
+			</div>
+		</section>
+		<script>
+			//제이쿼리
+			function btnJquery(){
+				$("#main").append("<img src='images/ha02.jpg' alt='하현성2'>");				
+			}
+			
+			//자바스크립트
+			function btn(){
+				/* 1. 요소 만들기(createElement())  */
+				var imgNode = document.createElement("img"); 
+				
+				/* 2. 속성 만들기(createAttribute())  */
+				var srcNode = document.createAttribute("src");  
+				var altNode = document.createAttribute("alt");
+				var classNode = document.createAttribute("class");
+				
+				/* 3. 속성에 속성값 대입하기 */
+				srcNode.value = "images/ha02.jpg";
+				altNode.value = "하현성2";
+				classNode.value = "style2";
+				
+				/* 4. 요소에다가 완성된 속성을 붙이기 */
+				imgNode.setAttributeNode(srcNode); 
+				imgNode.setAttributeNode(altNode);
+				imgNode.setAttributeNode(classNode);
+				
+				/* 5. 완성된 요소를 원하는 자리에 자식으로 넣기. */
+				document.querySelector("#main").appendChild(imgNode); 
+			}
+		</script>
+	</body>
+</html>
