@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>each</title> <!-- each는 forEach와 같.  -->
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			$(function(){
+				$("button").click(function(){
+					//alert("li 갸수 : " + $("ul li").length); //li들이 담긴 배열의 길이length
+					$("ul li").each(function(idx,o){ //obj에 <li>구글</li>가 통째로 들어감
+						console.log(idx + ": " + o); /* 여기서 o는 key값이 없어서 활용할 수 없 */
+					});				
+					
+					//$("ul li").each(function(){
+					//	alert($(this).text());  //this!!
+					//});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button>버튼</button>
+		<ul>
+			<li>구글</li>
+			<li>네이버</li>
+			<li>다음</li>
+			<li>네이트</li>
+		</ul>
+	</body>
+</html>

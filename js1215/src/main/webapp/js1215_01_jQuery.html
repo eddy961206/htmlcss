@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			/* 제이쿼리 시작구문 : $(document).ready(function(){});.. $(function(){});가 축약형 */
+			$(function(){
+				/* document.querySelector("#btn").addEventListener("click",function(){})가 아래처럼 바뀜  */
+				$("#btn").click(function(){
+					alert("제이쿼리로 클릭됨");
+				}); 
+				$("#btn").mouseover(function(){
+					alert("제이쿼리로 클릭됨");
+				}); 
+				$("#btn").mouseout(function(){
+					alert("제이쿼리로 클릭됨");
+				}); 
+				$("#btn").on("click mouseover mouseout",function(){
+					
+				}); /* 이벤트 여러개 한꺼번에 묶기 */
+				
+				
+			});
+			function btn(){
+				alert("버튼 눌림");
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">버튼</button>
+		<button id="btn2">버튼2</button>
+		<button>버튼3</button>
+		<h2 id="title">2022년 목표</h2>
+		<p>배터리 및 LiBS 국내외<br>
+		  적기 투자, BMR 성과 창출</p>
+	</body>
+</html>

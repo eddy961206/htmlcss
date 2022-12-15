@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			$(function(){
+				$("button").click(function(){
+					$("ul li:eq(1)").css({
+						"color":"#fff", /* css여러 속성 한꺼번에 넣기 */
+						"background-color":"blue",
+						"border" : "2px solid black"
+					});
+				}); 
+				
+// 				$("button").click(function(){
+// 					$("ul li:eq(0)").css("color","#fff").css("background-color","green");
+// 				})
+			})
+		</script>
+	</head>
+	<body>
+		<button>버튼</button>
+		<ul>
+			<li>구글</li>
+			<li>다음</li>
+			<li>네이버</li>
+			<li>네이트</li>
+		</ul>
+	</body>
+</html>

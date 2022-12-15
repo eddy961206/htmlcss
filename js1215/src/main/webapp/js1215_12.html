@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>each</title> <!-- each는 forEach와 같.  -->
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			$(function(){
+				var obj = [ /* Json 형태 */
+					{"area":"서울"},
+					{"area":"부산"},
+					{"area":"대구"},
+					{"area":"광주"},
+					{"area":"대전"}
+				]
+				
+				$("button").click(function(){
+					$(obj).each(function(idx,o){
+						console.log(idx + ":" + o.area); //obj의 key값이 있어야만 이렇게 o를 사용해먹을수 있음
+					})
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button>버튼</button>
+		<ul>
+			<li>구글</li>
+			<li>네이버</li>
+			<li>다음</li>
+			<li>네이트</li>
+		</ul>
+	</body>
+</html>

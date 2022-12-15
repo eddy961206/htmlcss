@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			$(function(){
+				$("button").click(function(){
+					//input에 숫자 넣고 버튼 클릭하면 해당 번호에 배경색상을 노란색으로 변경.
+					//var li_no = $("#no").val(); //input의 value값을 가져오기
+					//$("#list li").eq(li_no).css("background-color","yellow");
+					
+					//$("#list li").first().css("background","yellow") //첫번째 요소
+					//$("#list li").last().css("background","yellow") //마지막 요소
+					$("#list li").slice(1,3).css("background","green"); /* slice(1,3)-> 1<=ㅌ<3 */
+					
+				});
+// 				$("ul li").click(function(){
+// 					if(this.attr("background-color","yellow")){
+// 						this.attr("background-color","")
+// 					}
+// 				})
+			});
+		</script>
+		<style>
+			li{width:200px; height:40px;}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="no" id="no">
+		<button>버튼</button>
+		<ul id="list">
+			<li>네이버</li>
+			<li>다음</li>
+			<li>구글</li>
+			<li>네이트</li>
+		</ul>
+	</body>
+</html>

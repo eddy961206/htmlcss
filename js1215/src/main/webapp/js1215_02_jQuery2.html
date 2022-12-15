@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리2</title>
+		<!-- 제이쿼리 링크 필수!!!!!!!!!!!!!! -->
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			$(function(){
+				$("#btn").click(function(){
+					$("#title").css("color", "red"); 
+				 /* document.querySelector("#title").style.color = "red"; 가 위처럼 바뀜 */
+					
+					$("img").attr("src","images/ha02.jpg");
+				 /* document.querySelecor("img").setAttribute("src","images/ha02.jpg"); 가 위처럼 바뀜*/
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="btn">버튼</button>
+		<h2 id="title">2022년 목표</h2>
+		<p>배터리 및 LiBS 국내외<br>
+		  적기 투자, BMR 성과 창출</p>
+		 <img src="images/ha01.png">
+	</body>
+</html>
