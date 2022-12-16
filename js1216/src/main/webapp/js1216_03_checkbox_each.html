@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>checkbox each</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			$(function(){
+				$("button").click(function(){
+					console.log($("#link")); /* m.fn.init [a#link, context: document, selector: '#link'] */
+					console.log($("#link").attr('href')); /* naver */ /* html에서 찾아오는 */
+					console.log($("#link").prop('href')); /* http://localhost:8181/js1216/naver */
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button>버튼</button>
+		<a id="link" href="naver">네이버 링크</a>
+	</body>
+</html>

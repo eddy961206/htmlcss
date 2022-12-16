@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>each_idx_obj</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			$(function(){
+				$("button").click(function(){
+					$("#list li").each(function(idx,obj){
+						console.log(obj); // <li>구글</li> 태그 자체가 나옴
+						console.log($(obj).text()); //그냥 obj말고 $(obj).text()로 해야.
+					})					
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<button>버튼</button>
+		<ul id="list">
+			<li>구글</li>
+			<li>네이버</li>
+			<li>다음</li>
+			<li>네이트</li>
+		</ul>
+	</body>
+</html>
