@@ -42,6 +42,7 @@
 								htmlData+=  "<th>" + data[i].email + "</th>";
 								htmlData+=  "<th>" + data[i].gender + "</th>";
 								htmlData+=  "<th>" + data[i].ip_address + "</th>";
+								htmlData+=  "<th class='delete'>X</th>";
 								htmlData+=  "</tr>";
 							}//for
 							$("#tbody").append(htmlData);
@@ -72,6 +73,7 @@
 				htmlData+=  "<th>" + $("#email").val() + "</th>";
 				htmlData+=  "<th>" + $("#gender").val() + "</th>";
 				htmlData+=  "<th>155.194.131.44</th>";
+				htmlData+=  "<th class='delete'>X</th>";
 				htmlData+=  "</tr>";
 				
 				$("#tbody").append(htmlData);
@@ -100,14 +102,23 @@
 				var email = $("#email").val();
 				var gender = $("#gender").val();
 				
-				
 				$("#no"+$("#idNum").val()).parents().children().eq(1).text(lastName);
 				$("#no"+$("#idNum").val()).parents().children().eq(2).text(firstName);
 				$("#no"+$("#idNum").val()).parents().children().eq(3).text(email);
 				$("#no"+$("#idNum").val()).parents().children().eq(4).text(gender);
+				$("#lastName").val("");
+				$("#firstName").val("");
+				$("#email").val("");
+				$("#gender").val("");
 				
 			})//수정
 			
+			
+			//삭제
+			$(document).on("click",".delete",function(){
+				if(confirm($(this).parent().children().eq(0).text()+"번째 회원을 삭제하겠습니까?"))
+					$(this).parent().remove();
+			})//삭제
 			
 			
 			
@@ -145,7 +156,8 @@
 	         <col width="20%">
 	         <col width="25%">
 	         <col width="5%">
-	         <col width="30%">
+	         <col width="25%">
+	         <col width="5%">
 	       </colgroup>
 	       <tr>
 	         <th>번호</th>
@@ -154,6 +166,7 @@
 	         <th>이메일</th>
 	         <th>성별</th>
 	         <th>ip주소</th>
+	         <th>삭제</th>
 	       </tr>
 	       <tbody id="tbody">
 		       
