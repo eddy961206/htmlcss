@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>회원관리</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<style>
+		  *{margin:0; padding:0; }
+		  section{width:1000px; margin:30px auto; text-align: center; }
+		  section h2{margin-bottom:30px; }
+		  section table{width:100%; border-top:2px solid black; margin-bottom:40px; }
+		  section table,th,td{border:1px solid black; border-collapse: collapse; }
+		  section th{ height:50px; background:#efefef; }
+		  section td{ height:40px; }
+		  section button{font-size:20px; width:180px; height:40px; text-align: center;}
+		  div{ width:1000px; margin:30px auto;  }
+		  div h2{ text-align: center; }
+		  label {width:80px; height:30px; display: inline-block; }
+		  #writeBtn{ width:180px; height:30px; margin:0 auto; 
+		  text-align: center; display: block;}
+		  input,textarea { font-size: 18px; padding-left:10px;}
+		  textarea{padding-top:5px; }
+		  .tdUpdateBtn,.tdDeleteBtn { cursor: pointer;}
+		</style>
+		<script>
+			//불러오기 버튼 클릭하면 100개 데이터를 표로 출력하시오
+			$(function(){
+				$("#loadBtn").click(function(){
+					$.ajax({
+						url:"js/member.json",
+						type: "get",
+						data:"",
+						dataType:"json",
+						success: function(data){
+							htmlData = "";
+							console.log(data);
+							for(i=0; i < data.length; i++){
+								htmlData+=  "<tr>";
+								htmlData+=  "<th class='ids' id='no"+(i+1)+"'>" + data[i].id+ "</th>";
+								htmlData+=  "<th>" + data[i].last_name + "</th>";
+								htmlData+=  "<th>" + data[i].first_name + "</th>";
+								htmlData+=  "<th>" + data[i].email + "</th>";
+								htmlData+=  "<th>" + data[i].gender + "</th>";
+								htmlData+=  "<th>" + data[i].ip_address + "</th>";
+								htmlData+=  "</tr>";
+							}//for
+							$("#tbody").append(htmlData);
+							
+							
+						},//success시 
+						error: function(){
+							alert("ajax 연결 실패");
+						}
+					})//ajax
+					
+				})// loadBtn불러오기 버튼 클릭시
+				
+			})//제이쿼리 시작function
+			
+			
+			var addedId = 100;
+			//추가
+			$(document).on("click","#writeBtn",function(){
+				
+				addedId++;
+				htmlData = "";
+				
+				htmlData+=  "<tr>";
+				htmlData+=  "<th class='ids' id='no" + addedId +"'>" + addedId+ "</th>";
+				htmlData+=  "<th>" + $("#lastName").val() + "</th>";
+				htmlData+=  "<th>" + $("#firstName").val() + "</th>";
+				htmlData+=  "<th>" + $("#email").val() + "</th>";
+				htmlData+=  "<th>" + $("#gender").val() + "</th>";
+				htmlData+=  "<th>155.194.131.44</th>";
+				htmlData+=  "</tr>";
+				
+				$("#tbody").append(htmlData);
+				
+				$("#lastName").val("");
+				$("#firstName").val("");
+				$("#email").val("");
+				$("#gender").val("");
+			})//추가
+			
+			
+			// 수정 전단계(input박스에 원래 값 집어넣어주기)
+			$(document).on("click",".ids",function(){
+				$("#idNum").val($(this).parents().children().eq(0).text()); /* hidden인 input태그의 value값을 '번호'로 지정 */
+				$("#lastName").val($(this).parents().children().eq(1).text());
+				$("#firstName").val($(this).parents().children().eq(2).text());
+				$("#email").val($(this).parents().children().eq(3).text());
+				$("#gender").val($(this).parents().children().eq(4).text());
+			});
+			
+			
+			// 수정
+			$(document).on("click","#updateBtn",function(){
+				var lastName = $("#lastName").val();
+				var firstName = $("#firstName").val();
+				var email = $("#email").val();
+				var gender = $("#gender").val();
+				
+				
+				$("#no"+$("#idNum").val()).parents().children().eq(1).text(lastName);
+				$("#no"+$("#idNum").val()).parents().children().eq(2).text(firstName);
+				$("#no"+$("#idNum").val()).parents().children().eq(3).text(email);
+				$("#no"+$("#idNum").val()).parents().children().eq(4).text(gender);
+				
+			})//수정
+			
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		 <div>
+	      <form action="#" name="frm" method="get" >
+	         <h2>게시글 입력</h2>
+	         <input type="hidden" name="idNum" id="idNum"><br>
+	         <label>성</label>
+	         <input type="text" name="lastName" id="lastName"><br>
+	         <label>이름</label>
+	         <input type="text" name="firstName" id="firstName"><br>
+	         <label>이메일</label>
+	         <input type="text" name="email" id="email"><br>
+	         <label>성별</label>
+	         <input type="text" name="gender" id="gender"><br>
+	         <input type="button" id="writeBtn" name="writeBtn" value="추가">
+	         <input type="button" id="updateBtn" name="updateBtn" value="수정">
+	         <br>
+	       </form>
+	    </div>
+	
+	
+		<div>
+			<button id="loadBtn">불러오기</button>
+		</div>
+		<section>
+			<!-- 번호 | 성 | 이름 | 이메일 | 성별  | ip주소  -->
+			<table>
+	       <colgroup>
+	         <col width="10%">
+	         <col width="10%">
+	         <col width="20%">
+	         <col width="25%">
+	         <col width="5%">
+	         <col width="30%">
+	       </colgroup>
+	       <tr>
+	         <th>번호</th>
+	         <th>성</th>
+	         <th>이름</th>
+	         <th>이메일</th>
+	         <th>성별</th>
+	         <th>ip주소</th>
+	       </tr>
+	       <tbody id="tbody">
+		       
+	       </tbody>
+	     </table>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>map2</title>
+		<style>
+			*{margin:0; padding:0;}
+			div{width:800px; margin:30px auto; }
+			section{width:800px; margin:30px auto; text-align:center;}
+			section h2{margin-bottom:30px;}
+			section table{width:100%; border-top:2px solid black; margin-bottom:40px;}			
+			section table,th,td {border:1px solid black; border-collapse: collapse;}
+			section th{height:50px; background:#efefef;}
+			section td{height:40%;}
+			section button{font-size:20px; width:180px; height:40px; text-align:center;
+				margin-bottom:30px;
+			}
+		</style>	
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			$(function(){
+				$("#openBtn").click(function(){
+					$.ajax({
+						url:"js/students.json", // 클라이언트가 요청할 주소
+						type:"post",
+						data:{"id":"aaa", "pw":"111"},
+						dataType:"json",
+						success:function(data){
+							htmlData = "";
+							for(i=0; i<data.length; i++){
+								htmlData +=	"<tr>";
+								htmlData +=	"<td class='stuNum' id='no"+ (i+1) +"'>"+ data[i].stuNum +"</td>";
+								htmlData +=	"<td>"+ data[i].kor+"</td>";
+								htmlData +=	"<td>"+ data[i].eng+"</td>";
+								htmlData +=	"<td>"+ data[i].math+"</td>";
+								htmlData +=	"<td>"+ data[i].total+"</td>";
+								htmlData +=	"<td>"+ data[i].avg+"</td>";
+								htmlData +=	"<td>"+ data[i].date +"</td>";
+								htmlData +=	"<td class='boardDel' id="+ (i+1) +">X</td>";
+								htmlData +=	"</tr>";
+							}
+							
+							$("#tbody").html(htmlData);
+						},
+						error:function(){
+							alert("에러");
+						}
+					})//ajax
+				}) //불러오기 openBtn click 함수
+				
+				
+// 				//삭제 이렇게하면 boardDel class가 없을 때 읽어들인 후라 못찾음
+// 				$(".boardDel").click(function(){
+// 					alert("test");
+// 				});
+
+				
+				// 수정하기 위해 데이터 가져오기
+				$(document).on("click",".stuNum",function(){
+// 					alert("id : " + $(this).attr("id"));
+					$("#stuNum").val($(this).parent().children().eq(0).text()); /* $(this).attr("id")와 같 */
+					$("#kor").val($(this).parent().children().eq(1).text());
+					$("#eng").val($(this).parent().children().eq(2).text());
+					$("#math").val($(this).parent().children().eq(3).text());
+					var stuNumId = $(this).attr("id");
+// 					alert(stuNumId);
+				})// 수정하기 위해 데이터 가져오기
+				
+				
+				// 수정
+				$(document).on("click","#updateBtn",function(){
+					var kor = Number($("#kor").val());
+					var eng = Number($("#eng").val());
+					var math = Number($("#math").val());
+					var total = kor + eng + math;
+					var avg = Math.round(total/3.0*100)/100; /* 소수점 2째자리 표현 */
+					//날짜함수
+					var today = new Date();
+				    var year = today.getFullYear();
+				    var month = today.getMonth()+1;
+				    var day = today.getDate();
+				    var dateString = year+"-"+month+"-"+day;
+					console.log($("#no"+$("#stuNum").val()).parent().children().eq(1).text());
+					$("#no"+$("#stuNum").val()).parent().children().eq(1).text(kor);
+					$("#no"+$("#stuNum").val()).parent().children().eq(2).text(eng);
+					$("#no"+$("#stuNum").val()).parent().children().eq(3).text(math);
+					$("#no"+$("#stuNum").val()).parent().children().eq(4).text(total);
+					$("#no"+$("#stuNum").val()).parent().children().eq(5).text(avg);
+					$("#no"+$("#stuNum").val()).parent().children().eq(6).text(dateString);
+					
+					alert("데이터가 수정됐습니다.");
+					$("#stuNum").val("");
+					$("#kor").val("");
+					$("#eng").val("");
+					$("#math").val("");
+					
+				});//수정
+				
+				
+				
+				//삭제. document를 불러와서 한번 더 읽어들이고 해야.
+				$(document).on("click",".boardDel",function(){ 
+					console.log($(this));
+					alert("boardDel : " + $(this).attr("id"));
+					if(confirm($(this).parent().children().first().text()+"번 게시글을 삭제하시겠습니까?"))
+						$(this).parent().remove();
+				}); 
+				
+				
+				
+			})//jQuery 시작 function
+			
+			function delBtn(delId){ //js방법으로 삭제
+				alert("매개변수 id: " + delId);
+				$("#"+delId).parent().remove();
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<div>
+			<h2>데이터입력</h2>
+			<form action="" method="get">
+				<input type="hidden" name="stuNum" id="stuNum"><br> <!--  숨겨놔 -->
+				<label>국어</label>
+				<input type="text" name="kor" id="kor"><br>
+				<label>영어</label>
+				<input type="text" name="eng" id="eng"><br>
+				<label>수학</label>
+				<input type="text" name="math" id="math"><br>
+				<button type="button" id="updateBtn">수정</button>
+			</form>
+		</div>
+		<section>
+			<h2>자유게시판</h2>
+			<button id="openBtn">불러오기</button>
+			<p>학생번호 클릭시 수정이 가능합니다.</p>
+			<table>
+				<colgroup>
+					<col width="15%">
+					<col width="10%">
+					<col width="10%">
+					<col width="10%">
+					<col width="15%">
+					<col width="15%">
+					<col width="15%">
+					<col width="10%">
+				</colgroup>
+				<tr>
+					<th>학생번호</th>
+					<th>국어</th>
+					<th>영어</th>
+					<th>수학</th>
+					<th>합계</th>
+					<th>평균</th>
+					<th>등록일</th>
+					<th>삭제</th>
+				</tr>
+				<tbody id="tbody">
+				
+				</tbody>
+<!-- 				<tr> -->
+<!-- 					<td>1</td> -->
+<!-- 					<td>88</td> -->
+<!-- 					<td>84</td> -->
+<!-- 					<td>96</td> -->
+<!-- 					<td>266</td> -->
+<!-- 					<td>88.67</td> -->
+<!-- 					<td>2022-09-20</td> -->
+<!-- 					<td>X</td> -->
+<!-- 				</tr> -->
+			</table>
+		</section>
+	</body>
+</html>
