@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>popup2</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script> 
+		<script>
+			//아이디를 join02_info_input.html에 전달시키고 닫기
+			function winClose(){
+				if($("#pId").val() == "" || $("#pId").val() == null){
+					alert("데이터가 없습니다.");
+					return false;
+				}
+				opener.$("#id").val($("#pId").val());
+				window.close();
+			}
+			
+			function idCheck(){
+				$.ajax({
+					url:"js/idData.json",
+					type:"post",
+					dataType:"json",
+					success: function(data){
+						let check = 0;
+						data.forEach(function(names){
+							if(names.id == $("#pId").val()){
+								alert("해당 아이디가 이미 존재합니다. 다시 입력하세요.");
+								$("#pId").val("");
+								$("#pId").focus();
+								check = 1;
+								return false;
+							}
+						}); //forEach
+							
+						if(check == 1) return false;
+						$("span").text("아이디를 사용할 수 있습니다.");
+					},//success
+					error: function(){
+						
+					}
+				}) // ajax
+				
+				
+			}//idCheck 중복찾는 버튼 
+			
+		</script>
+		<style>
+			span{color:blue; font-weight:600;}
+		</style>
+	</head>
+	<body>
+		<h2>아이디 중복체크</h2>
+		<p>아이디를 입력해서 중복확인을 해주셔야 합니다.</p>
+		<form>
+			<input type="text" name="pId" id="pId">
+			<button type="button" onclick="idCheck()">중복체크</button>
+			<br>
+			<span></span>
+			<br>
+			<input type="button" value="창닫기" onclick="winClose()">
+		</form>
+	</body>
+</html>
